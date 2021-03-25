@@ -1,0 +1,19 @@
+{
+    "name": "multiline-entity-card",
+    "version": "1.0.0",
+    "description": "An custom Entity card that shows text on multiple lines.",
+    "keywords": [
+        "home-assistant",
+        "homeassistant",
+        "hass",
+        "automation",
+        "lovelace",
+        "custom-cards"
+    ],
+    "repository": "git@github.com:jampez77/multiline-entity-card.git",
+    "author": "Jamie Nandhra-Pezone <jampez77@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "lit-element": "^2.2.0"
+    }
+}
