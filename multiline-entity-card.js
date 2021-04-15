@@ -73,7 +73,8 @@ class MultilineEntityCard extends LitElement {
 
         <div class="header">
           <div class="name">
-          ${this.config.name == 0 ?
+
+          ${this.config.name == undefined ?
             state.attributes.friendly_name :
             this.config.name
           }
@@ -100,7 +101,6 @@ class MultilineEntityCard extends LitElement {
       return css`
       ha-card {
         cursor: pointer;
-        padding: 0 16px 0;
       }
       .header{
         padding: 8px 16px 0px;
@@ -127,7 +127,7 @@ class MultilineEntityCard extends LitElement {
         line-height: 28px;
       }
       .value{
-        font-size: 2vw;
+        font-size: 28px;
         margin-right: 4px;
       }
       `;
