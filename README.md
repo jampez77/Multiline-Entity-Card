@@ -1,5 +1,5 @@
 # Multiline Entity Card
- A custom entity card for [Home Assistant](https://www.home-assistant.io/) that allows text to span multiple lines.
+ A custom entity card modelled on the original Entity card for [Home Assistant](https://www.home-assistant.io/) that allows text to span multiple lines.
 
  <img src='card.png' />
 
