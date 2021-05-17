@@ -48,8 +48,15 @@ class MultilineEntityCard extends LitElement {
       }
 
       this.numberElements = 0;
+      this.showValue = "";
 
       const state = this._hass.states[this.config.entity];
+      this.showValue = (state ? state.state : this._hass.localize("state.default.unknown"));
+
+      if (!this.config.attribute) {
+        var showAttribute = state.attributes[this.config.attribute];
+        this.showValue = (showAttribute ? showAttribute : this._hass.localize("state.default.unknown"));
+      }
 
       if (!state) {
         return html`
@@ -86,7 +93,7 @@ class MultilineEntityCard extends LitElement {
         </div>
         <div class="info">
           <span class="value">
-            ${state ? state.state : 'unavailable'}
+            ${this.showValue}
           </span>
         </div>
         </ha-card>
