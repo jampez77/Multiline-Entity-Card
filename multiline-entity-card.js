@@ -53,7 +53,7 @@ class MultilineEntityCard extends LitElement {
       const state = this._hass.states[this.config.entity];
       this.showValue = (state ? state.state : this._hass.localize("state.default.unknown"));
 
-      if (!this.config.attribute) {
+      if (this.config.attribute) {
         var showAttribute = state.attributes[this.config.attribute];
         this.showValue = (showAttribute ? showAttribute : this._hass.localize("state.default.unknown"));
       }
