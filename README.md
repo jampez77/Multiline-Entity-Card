@@ -23,6 +23,7 @@
  type: 'custom:multiline-entity-card'
  name: "Master Bedroom"
  entity: sensor.master_bedroom_reminders
+ attribute: next_reminder
  ```
 
  [commits-shield]: https://img.shields.io/github/commit-activity/y/jampez77/multiline-entity-card.svg?style=for-the-badge
