@@ -77,28 +77,38 @@ class MultilineEntityCard extends LitElement {
 
       return html`
         <ha-card @click="${this._handleClick}">
-
         <div class="header">
           <div class="name">
-
-          ${this.config.name == undefined ?
-            state.attributes.friendly_name :
-            this.config.name
+          ${this.config.show_name == false ?
+            ' ' :
+            `${this.config.name == undefined ?
+              state.attributes.friendly_name :
+              this.config.name
+            }`
           }
           </div>
-          <ha-icon icon="${state.attributes.icon == undefined ?
-            "mdi:eye" :
-            state.attributes.icon
-          }"></ha-icon>
+
+          ${this.config.show_icon == false ? '' : html`
+              <ha-icon icon="${state.attributes.icon == undefined ?
+                "mdi:eye" :
+                state.attributes.icon
+              }" ></ha-icon>`
+          }
         </div>
         <div class="info">
           <span class="value">
-            ${this.showValue}
+            ${this.stringToHTML(this.showValue)}
           </span>
         </div>
         </ha-card>
       `;
     }
+
+    stringToHTML = function (str) {
+      var t = document.createElement('template');
+      t.innerHTML = str;
+      return t.content;
+    };
 
     _handleClick() {
       fireEvent(this, "hass-more-info", { entityId: this.config.entity });
@@ -129,7 +139,6 @@ class MultilineEntityCard extends LitElement {
       }
       .info{
         padding: 0px 16px 16px;
-        margin-top: -4px;
         overflow: hidden;
         line-height: 28px;
       }
