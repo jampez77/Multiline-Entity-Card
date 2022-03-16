@@ -25,6 +25,7 @@
  entity: sensor.master_bedroom_reminders
  attribute: next_reminder
  show_icon: true
+ image: /local/image/file.png
  show_name: true
  ```
 
