@@ -96,7 +96,7 @@ class MultilineEntityCard extends LitElement {
                   }" ></ha-icon>` : html`
               <img src="${
                 this.config.image
-              }" width=25 height=25></img>`
+              }" height=25></img>`
           }
 
 
