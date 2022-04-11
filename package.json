@@ -1,6 +1,6 @@
 {
     "name": "multiline-entity-card",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "description": "An custom Entity card that shows text on multiple lines.",
     "keywords": [
         "home-assistant",
