@@ -100,7 +100,7 @@ class MultilineEntityCard extends LitElement {
       var uomPrefix = "";
       var uomSuffix = "";
 
-      if (uom.length > 0) {
+      if (uom != undefined && uom.length > 0) {
         if (this.config.unit_of_measurement == "prefix") {
           uomPrefix = uom;
         }
