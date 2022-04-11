@@ -27,6 +27,7 @@
  show_icon: true
  image: /local/image/file.png
  show_name: true
+ unit_of_measurement: prefix / suffix
  ```
 
  [commits-shield]: https://img.shields.io/github/commit-activity/y/jampez77/multiline-entity-card.svg?style=for-the-badge
