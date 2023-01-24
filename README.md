@@ -28,6 +28,26 @@
  image: /local/image/file.png
  show_name: true
  unit_of_measurement: prefix / suffix
+
+ tap_action:
+   action: more-info
+   #Optional entity_id to get more-info on another entity. Default is curent entity
+   data:
+     target:
+       entity_id: input_boolean.toggle
+
+
+  tap_action:
+   action: call-service
+   service: input_boolean.toggle
+   data: {}
+   target:
+     entity_id: input_boolean.test_toggle
+
+  tap_action:
+   action: navigate
+   navigation_path: /config
+
  ```
 
  [commits-shield]: https://img.shields.io/github/commit-activity/y/jampez77/multiline-entity-card.svg?style=for-the-badge
