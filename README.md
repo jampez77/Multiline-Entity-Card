@@ -8,6 +8,12 @@
  ![Project Maintenance][maintenance-shield]
  [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
 
+
+ Enjoying this? Help me out with a :beers: or :coffee:!
+
+ [![coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/jampez77)
+
+
  ## Installation through [HACS](https://github.com/custom-components/hacs)
 
  Use [HACS](https://github.com/custom-components/hacs) to install the **Multiline Entity Card** plugin.
