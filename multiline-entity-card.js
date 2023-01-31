@@ -211,7 +211,17 @@ class MultilineEntityCard extends LitElement {
 const handleClick = (node, hass, config, tapAction, entity) => {
     let e;
     // eslint-disable-next-line default-case
+  if (tapAction != undefined) {
     switch (tapAction.action) {
+      case 'more-info':
+        if (tapAction.data != undefined && tapAction.data.target != undefined && tapAction.data.target.entity_id != undefined) {
+          entity = { entityId: tapAction.data.target.entity_id };
+        } else {
+          entity = { entityId: entity || config.entity };
+        }
+
+        fireEvent(node, "hass-more-info", entity);
+        break;
       case 'navigate':
         if (!tapAction.navigation_path) return;
         // eslint-disable-next-line no-restricted-globals
@@ -229,16 +239,11 @@ const handleClick = (node, hass, config, tapAction, entity) => {
         const serviceData = { ...tapAction.data.target };
 
         hass.callService(domain, service, serviceData);
-        break;
-      default:
-        if (tapAction.data != undefined && tapAction.data.target != undefined && tapAction.data.target.entity_id != undefined) {
-            entity = { entityId: tapAction.data.target.entity_id};
-        } else {
-            entity = { entityId: entity || config.entity };
-        }
-
-        fireEvent(node, "hass-more-info", entity);
     }
+  } else {
+    fireEvent(node, "hass-more-info", { entityId: entity || config.entity });
+  }
+
   };
 
   customElements.define('multiline-entity-card', MultilineEntityCard);
